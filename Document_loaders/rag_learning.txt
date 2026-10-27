@@ -1,0 +1,95 @@
+# Introduction to Artificial Intelligence and RAG
+
+## 1. What is Artificial Intelligence?
+
+Artificial Intelligence (AI) is a branch of computer science that focuses on creating machines and software capable of performing tasks that normally require human intelligence. These tasks include understanding language, recognizing images, solving problems, and making decisions.
+
+Examples of AI applications include virtual assistants, recommendation systems, fraud detection, and self-driving cars.
+
+## 2. What is Machine Learning?
+
+Machine Learning (ML) is a subset of Artificial Intelligence. It enables computers to learn patterns from data and make predictions or decisions without being explicitly programmed for every situation.
+
+There are three major types of Machine Learning:
+
+- Supervised Learning: The model learns from labeled data. Examples include house price prediction and spam email detection.
+- Unsupervised Learning: The model identifies patterns in unlabeled data. Examples include customer segmentation and clustering.
+- Reinforcement Learning: The model learns by interacting with an environment and receiving rewards or penalties.
+
+## 3. What is a Large Language Model?
+
+A Large Language Model (LLM) is an AI model trained on large amounts of text to understand and generate human-like language. LLMs can answer questions, summarize documents, explain concepts, and generate code.
+
+However, an LLM may not know information from private documents or recent sources that were not included in its training data.
+
+## 4. What is Retrieval-Augmented Generation?
+
+Retrieval-Augmented Generation (RAG) is a technique that combines information retrieval with text generation. Instead of relying only on the knowledge stored in an LLM, a RAG system retrieves relevant information from an external knowledge source and provides it to the model as context.
+
+A typical RAG system has five main stages:
+
+1. Document Loading: The system loads documents from sources such as text files, PDFs, or web pages.
+2. Text Splitting: Long documents are divided into smaller chunks so that relevant sections can be retrieved efficiently.
+3. Embedding Generation: Each text chunk is converted into a numerical vector called an embedding.
+4. Retrieval: When a user asks a question, the system searches for chunks that are semantically similar to the question.
+5. Answer Generation: The retrieved chunks are provided to the LLM, which generates an answer based on the available context.
+
+## 5. What Are Embeddings?
+
+Embeddings are numerical representations of text. They capture aspects of the meaning of words, sentences, or paragraphs.
+
+Texts with similar meanings often have embeddings that are close to each other in vector space. This allows a retrieval system to find relevant information even when the user's question does not contain the exact words used in a document.
+
+For example, the questions "How can I learn AI?" and "What is the best way to study artificial intelligence?" may have semantically similar embeddings.
+
+## 6. What Is a Vector Database?
+
+A vector database stores and searches vector embeddings. In a RAG application, it can store document chunks along with their associated text and metadata.
+
+When a user asks a question, the system converts the question into an embedding and searches the database for relevant document chunks.
+
+ChromaDB is one example of a vector database that can be used in a RAG project.
+
+## 7. What Is a Text Chunk?
+
+A text chunk is a smaller section of a larger document. Chunking helps a RAG system retrieve focused information instead of passing an entire long document to the language model.
+
+Chunk size and overlap are important settings. If chunks are too small, important context may be lost. If chunks are too large, retrieval may return irrelevant information along with useful content.
+
+Chunk overlap preserves some text from the end of one chunk in the beginning of the next chunk.
+
+## 8. What Is LangChain?
+
+LangChain is a framework that helps developers build applications using language models. It provides integrations for chat models, document loaders, text splitters, embedding models, and retrieval systems.
+
+In a RAG application, LangChain can connect a document loader, a text splitter, an embedding model, a vector database, and a language model into one workflow.
+
+## 9. What Is Gemini?
+
+Gemini is Google's family of generative AI models. Developers can access supported Gemini models through the Gemini API.
+
+In a RAG project, a Gemini model can generate answers using information retrieved from a document collection. The model's output depends on the supplied context, the prompt, and the model's capabilities.
+
+## 10. Example of a RAG Application
+
+Imagine a college student uploads a document containing university examination rules. The student asks, "How many days before an examination must students submit their application?"
+
+The RAG system searches the uploaded document for relevant sections, retrieves the text that describes the application deadline, and sends that text to the language model.
+
+The language model then answers using the retrieved information. If the document does not contain the deadline, a well-designed system should state that the information was not found instead of inventing a date.
+
+## 11. Advantages of RAG
+
+- It can use information from private or custom documents.
+- It can incorporate updated information without retraining the language model.
+- It can provide answers grounded in retrieved text.
+- It can help users search large collections of documents.
+- It can reduce unsupported answers when retrieval and prompting are designed well.
+
+RAG does not guarantee that every answer will be correct. Retrieval quality, document quality, and language-model behavior all affect the final result.
+
+## 12. Summary
+
+Retrieval-Augmented Generation is a method for building AI applications that answer questions using external knowledge sources. A basic RAG pipeline loads documents, splits text into chunks, creates embeddings, stores vectors, retrieves relevant information, and generates an answer using a language model.
+
+A beginner can build a simple RAG application using Python, LangChain, Gemini, ChromaDB, and text or PDF documents.
